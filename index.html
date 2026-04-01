@@ -1,1 +1,404 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Placeholder</title></head><body><p>Coming soon.</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Workday Business Process Framework SOP — Kaizen OS</title>
+<style>
+  :root {
+    --bg:#0e0e0e;--surface:#161616;--surface2:#1e1e1e;--border:#2a2a2a;
+    --accent:#c8f04a;--accent-dim:#a8cc30;--text:#e8e8e8;--text-muted:#888;--text-dim:#555;
+    --tip:#1a2e1a;--tip-b:#4caf50;--tip-t:#a5d6a7;
+    --warn:#2e1a0e;--warn-b:#ff9800;--warn-t:#ffcc80;
+    --note:#1a1e2e;--note-b:#5c7cfa;--note-t:#a5b4fc;
+    --rat:#2a1e2e;--rat-b:#a855f7;--rat-t:#d8b4fe;
+    --crit:#2e0e0e;--crit-b:#ef4444;--crit-t:#fca5a5;
+    --font:'Segoe UI',system-ui,sans-serif;--mono:'Courier New',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:15px;line-height:1.7}
+  .page{max-width:900px;margin:0 auto;padding:48px 32px}
+  .cover{border-bottom:1px solid var(--border);padding-bottom:48px;margin-bottom:48px}
+  .tags{display:flex;align-items:center;gap:8px;margin-bottom:28px;flex-wrap:wrap}
+  .series-tag{display:inline-flex;align-items:center;background:rgba(200,240,74,.06);border:1px solid rgba(200,240,74,.2);border-radius:4px;padding:5px 12px}
+  .series-label{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--accent-dim);text-transform:uppercase}
+  .brand-tag{display:inline-flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:6px 14px}
+  .brand-dot{width:8px;height:8px;background:var(--accent);border-radius:50%}
+  .brand-name{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase}
+  .cover-title{font-size:36px;font-weight:800;line-height:1.2;color:#fff;margin-bottom:12px}
+  .cover-title span{color:var(--accent)}
+  .cover-sub{font-size:16px;color:var(--text-muted);margin-bottom:32px;max-width:620px}
+  .meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
+  .meta-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px}
+  .meta-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-dim);margin-bottom:4px}
+  .meta-value{font-size:14px;color:var(--text);font-weight:600}
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 28px;margin-bottom:48px}
+  .toc-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim);margin-bottom:16px}
+  .toc-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .toc-list li{display:flex;align-items:center;gap:12px}
+  .toc-num{font-size:11px;font-weight:700;color:var(--accent);font-family:var(--mono);min-width:24px}
+  .toc-list a{color:var(--text-muted);text-decoration:none;font-size:14px;transition:color .2s}
+  .toc-list a:hover{color:var(--accent)}
+  .section{margin-bottom:56px;scroll-margin-top:24px}
+  .section-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+  .section-num{font-size:11px;font-weight:800;font-family:var(--mono);color:var(--accent);background:rgba(200,240,74,.08);border:1px solid rgba(200,240,74,.2);border-radius:4px;padding:4px 8px;margin-top:4px;white-space:nowrap}
+  .section-title{font-size:22px;font-weight:700;color:#fff}
+  .section-desc{font-size:14px;color:var(--text-muted);margin-top:4px}
+  .callout{border-left:3px solid;border-radius:0 6px 6px 0;padding:14px 18px;margin:20px 0}
+  .callout-label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
+  .callout-body{font-size:14px;line-height:1.6}
+  .callout.tip{background:var(--tip);border-color:var(--tip-b)}.callout.tip .callout-label{color:var(--tip-b)}.callout.tip .callout-body{color:var(--tip-t)}
+  .callout.warn{background:var(--warn);border-color:var(--warn-b)}.callout.warn .callout-label{color:var(--warn-b)}.callout.warn .callout-body{color:var(--warn-t)}
+  .callout.note{background:var(--note);border-color:var(--note-b)}.callout.note .callout-label{color:var(--note-b)}.callout.note .callout-body{color:var(--note-t)}
+  .callout.rat{background:var(--rat);border-color:var(--rat-b)}.callout.rat .callout-label{color:var(--rat-b)}.callout.rat .callout-body{color:var(--rat-t)}
+  .callout.crit{background:var(--crit);border-color:var(--crit-b)}.callout.crit .callout-label{color:var(--crit-b)}.callout.crit .callout-body{color:var(--crit-t)}
+  .steps{display:flex;flex-direction:column;gap:0}
+  .step{display:flex;gap:20px;position:relative}
+  .step:not(:last-child)::after{content:'';position:absolute;left:18px;top:44px;bottom:0;width:1px;background:var(--border)}
+  .step-num{width:36px;height:36px;border-radius:50%;background:var(--surface2);border:2px solid var(--accent);color:var(--accent);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:4px;font-family:var(--mono);position:relative;z-index:1}
+  .step-content{flex:1;padding-bottom:28px}
+  .step-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+  .step-body{font-size:14px;color:var(--text-muted);line-height:1.7}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .checklist li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--text)}
+  .check-box{width:18px;height:18px;border:2px solid var(--border);border-radius:3px;flex-shrink:0;margin-top:2px;cursor:pointer;transition:all .2s}
+  .check-box.checked{background:var(--accent);border-color:var(--accent)}
+  .check-label{flex:1}
+  .check-label small{display:block;color:var(--text-dim);font-size:12px;margin-top:2px}
+  .data-table{width:100%;border-collapse:collapse;font-size:14px}
+  .data-table th{background:var(--surface2);color:var(--text-muted);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;border-bottom:1px solid var(--border)}
+  .data-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:top}
+  .data-table tr:last-child td{border-bottom:none}
+  .data-table tr:hover td{background:rgba(255,255,255,.02)}
+  .badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:3px}
+  .badge.high{background:rgba(255,99,99,.15);color:#ff9999}
+  .badge.med{background:rgba(255,165,0,.15);color:#ffcc80}
+  .badge.low{background:rgba(76,175,80,.15);color:#a5d6a7}
+  .badge.crit{background:rgba(239,68,68,.2);color:#fca5a5}
+  .badge.info{background:rgba(92,124,250,.15);color:#a5b4fc}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px}
+  .card-title{font-size:13px;font-weight:700;color:var(--accent-dim);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+  .subsection{margin:28px 0}
+  .subsection-title{font-size:14px;font-weight:700;color:var(--accent-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+  .divider{border:none;border-top:1px solid var(--border);margin:40px 0}
+  .notes-area{background:var(--surface);border:1px dashed var(--border);border-radius:8px;padding:24px}
+  .nf-label{font-size:11px;color:var(--text-dim);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px}
+  .nfield{background:transparent;border:none;border-bottom:1px solid var(--border);width:100%;color:var(--text);font-family:var(--font);font-size:14px;padding:8px 0;margin-bottom:16px;outline:none}
+  .nfield::placeholder{color:var(--text-dim)}
+  .nfield:focus{border-color:var(--accent)}
+  .ntarea{background:var(--surface2);border:1px solid var(--border);border-radius:6px;width:100%;color:var(--text);font-family:var(--font);font-size:14px;padding:12px 16px;outline:none;resize:vertical;min-height:120px}
+  .ntarea:focus{border-color:var(--accent)}
+  .nrow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+  .flow{display:flex;align-items:center;gap:0;flex-wrap:wrap;margin:20px 0}
+  .flow-node{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:10px 16px;font-size:13px;font-weight:600;color:var(--text);text-align:center;min-width:110px}
+  .flow-node.accent{border-color:var(--accent);color:var(--accent)}
+  .flow-arrow{color:var(--text-dim);font-size:18px;padding:0 8px}
+  .footer{border-top:1px solid var(--border);padding-top:32px;margin-top:64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:2px}
+  .footer-note{font-size:12px;color:var(--text-dim)}
+  p{margin-bottom:12px;color:var(--text-muted);font-size:14px}
+  ul,ol{padding-left:20px;color:var(--text-muted);font-size:14px;line-height:1.8}
+  strong{color:var(--text)}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <div class="tags">
+      <div class="series-tag"><span class="series-label">Workday SOP Series · Vol. 03</span></div>
+      <div class="brand-tag"><div class="brand-dot"></div><span class="brand-name">Kaizen OS</span></div>
+    </div>
+    <div class="cover-title">Business Process<br><span>Framework (BPF)</span></div>
+    <p class="cover-sub">A practitioner SOP for designing, configuring, and maintaining Workday Business Processes — covering step types, routing logic, condition rules, notifications, and BP governance across the full HR transaction lifecycle.</p>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="meta-label">Document Type</div><div class="meta-value">SOP Template</div></div>
+      <div class="meta-item"><div class="meta-label">Series Volume</div><div class="meta-value">03 of 06</div></div>
+      <div class="meta-item"><div class="meta-label">Audience</div><div class="meta-value">Workday Admins / Consultants</div></div>
+      <div class="meta-item"><div class="meta-label">Scope</div><div class="meta-value">BPF Configuration</div></div>
+      <div class="meta-item"><div class="meta-label">Version</div><div class="meta-value">1.0</div></div>
+      <div class="meta-item"><div class="meta-label">Status</div><div class="meta-value">Active</div></div>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">Table of Contents</div>
+    <ul class="toc-list">
+      <li><span class="toc-num">01</span><a href="#s1">How to Use This SOP</a></li>
+      <li><span class="toc-num">02</span><a href="#s2">BPF Architecture Primer</a></li>
+      <li><span class="toc-num">03</span><a href="#s3">Pre-Configuration Checklist</a></li>
+      <li><span class="toc-num">04</span><a href="#s4">Business Process Configuration — Step-by-Step</a></li>
+      <li><span class="toc-num">05</span><a href="#s5">Condition Rules &amp; Routing Logic</a></li>
+      <li><span class="toc-num">06</span><a href="#s6">Notifications &amp; To-Do Steps</a></li>
+      <li><span class="toc-num">07</span><a href="#s7">Validation &amp; Testing</a></li>
+      <li><span class="toc-num">08</span><a href="#s8">Rollback &amp; Risk Notes</a></li>
+      <li><span class="toc-num">09</span><a href="#s9">Operator Notes</a></li>
+      <li><span class="toc-num">10</span><a href="#s10">Change Log</a></li>
+    </ul>
+  </div>
+
+  <!-- S1 -->
+  <div class="section" id="s1">
+    <div class="section-header"><div class="section-num">01</div><div><div class="section-title">How to Use This SOP</div><div class="section-desc">Read before editing any business process</div></div></div>
+    <p>The Business Process Framework governs every HR transaction in Workday — from Hire to Terminate, Change Job to Compensation Change. A misconfigured BP can stall transactions for hundreds of employees, route approvals incorrectly, or bypass controls entirely. This SOP provides a repeatable, auditable approach to BP configuration and change management.</p>
+    <div class="callout crit"><div class="callout-label">🔴 Critical</div><div class="callout-body">Business Process changes affect live transactions immediately upon saving — there is no "pending activation" step as with security. If you edit a BP while transactions are in-flight, those transactions continue on the <strong>old</strong> definition. New transactions use the <strong>new</strong> definition. Always coordinate BP changes with your HR Ops team to avoid mid-process confusion.</div></div>
+    <div class="callout tip"><div class="callout-label">✅ Tip</div><div class="callout-body">Duplicate this document per business process. Name files using your convention (e.g., <em>SOP_BP_Hire_Employee_v1.0_2026.html</em>). For complex BPs with many variants, create one file per sub-process definition.</div></div>
+  </div>
+
+  <!-- S2 -->
+  <div class="section" id="s2">
+    <div class="section-header"><div class="section-num">02</div><div><div class="section-title">BPF Architecture Primer</div><div class="section-desc">Core concepts before configuration</div></div></div>
+    <p>Workday business processes are structured sequences of steps that govern how HR transactions flow from initiation to completion. Every BP has a definition, one or more steps, and security policies controlling who can do what.</p>
+
+    <div class="subsection"><div class="subsection-title">Standard BP Lifecycle</div></div>
+    <div class="flow">
+      <div class="flow-node accent">Initiate</div><div class="flow-arrow">→</div>
+      <div class="flow-node">Action Step</div><div class="flow-arrow">→</div>
+      <div class="flow-node">Approval Step</div><div class="flow-arrow">→</div>
+      <div class="flow-node">To-Do / Notify</div><div class="flow-arrow">→</div>
+      <div class="flow-node accent">Complete</div>
+    </div>
+
+    <div class="subsection"><div class="subsection-title">Step Type Reference</div></div>
+    <table class="data-table">
+      <thead><tr><th>Step Type</th><th>Purpose</th><th>Routing To</th><th>Common Use</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Action</strong></td><td>Data entry or decision by a user</td><td>Specific security group</td><td>Hire initiation, Job Change entry</td></tr>
+        <tr><td><strong>Approval</strong></td><td>Approve or deny the transaction</td><td>Manager, HR leader, chain of command</td><td>Manager approval on salary changes</td></tr>
+        <tr><td><strong>Approval Chain</strong></td><td>Sequential approvals up org hierarchy</td><td>Reporting chain</td><td>Escalating approvals for senior hires</td></tr>
+        <tr><td><strong>To-Do</strong></td><td>Manual task reminder — no system action</td><td>Security group or role</td><td>Remind IT to provision access</td></tr>
+        <tr><td><strong>Notification</strong></td><td>Inform a group — no action required</td><td>Any group or individual</td><td>Notify payroll of a new hire</td></tr>
+        <tr><td><strong>Checklist</strong></td><td>Group of To-Do items that can run in parallel</td><td>Multiple groups</td><td>Onboarding task distribution</td></tr>
+        <tr><td><strong>Sub-Process</strong></td><td>Triggers a separate child BP</td><td>Defined in child BP</td><td>Benefits enrolment triggered by Hire</td></tr>
+        <tr><td><strong>Review</strong></td><td>View-only review step — no approval action</td><td>Defined security group</td><td>Legal review of termination</td></tr>
+      </tbody>
+    </table>
+
+    <div class="grid2">
+      <div class="card"><div class="card-title">Condition Rules</div><p style="font-size:13px;color:var(--text-muted);margin:0">Logic that controls whether a step is included, skipped, or routed differently based on worker or transaction data. The primary tool for building intelligent, conditional BPs.</p></div>
+      <div class="card"><div class="card-title">BP Definitions vs. Templates</div><p style="font-size:13px;color:var(--text-muted);margin:0">A BP <strong>Definition</strong> is a specific configuration attached to a BP type. A BP <strong>Template</strong> is a reusable structure. Most orgs configure Definitions directly — Templates are used for standardised multi-tenant deployments.</p></div>
+      <div class="card"><div class="card-title">Effective Dating</div><p style="font-size:13px;color:var(--text-muted);margin:0">BP changes are not effective-dated. A saved change applies to all new transactions immediately. Plan changes carefully around high-volume periods (month-end, open enrolment).</p></div>
+      <div class="card"><div class="card-title">BP Inheritance</div><p style="font-size:13px;color:var(--text-muted);margin:0">Child orgs can inherit BP definitions from parent orgs or override with their own. Understand your org's inheritance model before making changes — an edit at the wrong level can unexpectedly affect multiple entities.</p></div>
+    </div>
+  </div>
+
+  <!-- S3 -->
+  <div class="section" id="s3">
+    <div class="section-header"><div class="section-num">03</div><div><div class="section-title">Pre-Configuration Checklist</div><div class="section-desc">Complete before editing any BP definition</div></div></div>
+
+    <div class="subsection"><div class="subsection-title">Design Readiness</div></div>
+    <ul class="checklist">
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">BP process map documented — current state and desired future state<small>Include every step, the approver group, and the condition rule logic for each routing decision</small></span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">All condition rules and routing logic mapped and approved by HR process owner</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Security groups confirmed — all approver and action step groups exist and are correctly configured (see Vol. 02)</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Notifications list agreed — who gets notified at what step and via what channel</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">SLAs defined — expected time-to-complete for each step and overall BP<small>Required for To-Do and Approval escalation configuration</small></span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">In-flight transactions reviewed — confirm timing of change will not disrupt active transactions</span></li>
+    </ul>
+
+    <div class="subsection"><div class="subsection-title">Stakeholder Sign-offs</div></div>
+    <ul class="checklist">
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">HR Process Owner sign-off on designed workflow</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Legal / Compliance review if BP governs a regulated transaction (termination, leave, pay change)<small>[ORG-SPECIFIC]</small></span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Works Council notification if BP change affects how employee transactions are monitored or processed<small>Required in some EU/DACH jurisdictions</small></span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Change Management / CAB approval for production BP changes</span></li>
+    </ul>
+  </div>
+
+  <!-- S4 -->
+  <div class="section" id="s4">
+    <div class="section-header"><div class="section-num">04</div><div><div class="section-title">Business Process Configuration — Step-by-Step</div><div class="section-desc">Editing and building BP definitions in Workday</div></div></div>
+
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content">
+        <div class="step-title">Locate the Business Process Definition</div>
+        <div class="step-body">Search for the BP by name (e.g., <em>Hire Employee</em>, <em>Change Job</em>). Navigate to <strong>Business Process</strong> task and select <strong>Edit Definition</strong>. Alternatively, use <strong>View Business Process Definitions</strong> to browse all BPs. Confirm you are editing the correct definition — many BPs have multiple definitions per org or country.</div>
+        <div class="callout tip"><div class="callout-label">✅ Tip</div><div class="callout-body">Before editing, run <strong>View Business Process Definition</strong> and screenshot the current state. This is your rollback reference — Workday does not version BP definitions automatically.</div></div>
+      </div></div>
+
+      <div class="step"><div class="step-num">2</div><div class="step-content">
+        <div class="step-title">Add or Edit a Step</div>
+        <div class="step-body">In the BP definition canvas, click <strong>Add Step</strong> (or click an existing step to edit). Select the step type from the dropdown (see Section 02 reference table). Configure: Step name, security group assignment (who acts on this step), order/sequence, and whether the step is required or optional.</div>
+        <div class="callout note"><div class="callout-label">📋 Note</div><div class="callout-body">Step order matters but is not always sequential — Workday supports parallel steps (steps that run simultaneously). Mark steps as parallel where the business process design permits concurrent action, such as simultaneous IT provisioning and payroll notification.</div></div>
+      </div></div>
+
+      <div class="step"><div class="step-num">3</div><div class="step-content">
+        <div class="step-title">Configure Approval Step Routing</div>
+        <div class="step-body">For Approval steps, configure the routing target: <strong>Specific Security Group</strong> (e.g., HR Director group), <strong>Manager</strong> (direct or skip-level), or <strong>Approval Chain</strong> (sequential up the org hierarchy). Set the <strong>order</strong> (single approver vs. all must approve) and <strong>delegation rules</strong>.</div>
+        <div class="callout warn"><div class="callout-label">⚠️ Warning</div><div class="callout-body">Approval Chain routing can create extremely long approval sequences for deep org hierarchies. Always set a <strong>maximum levels</strong> cap and test with your deepest org structure in sandbox before enabling in production.</div></div>
+      </div></div>
+
+      <div class="step"><div class="step-num">4</div><div class="step-content">
+        <div class="step-title">Set Escalation &amp; SLA Rules</div>
+        <div class="step-body">On each Approval or To-Do step, configure <strong>Due Date Rules</strong>: number of days before the step is overdue, and escalation actions (re-assign, notify manager, alert HRIS). Navigate to <strong>Maintain Business Process Step Due Dates</strong> for org-level defaults. Override at the step level where specific SLAs apply.</div>
+      </div></div>
+
+      <div class="step"><div class="step-num">5</div><div class="step-content">
+        <div class="step-title">Save &amp; Validate Structure</div>
+        <div class="step-body">Save the definition. Workday will surface validation warnings for common configuration errors (orphaned steps, missing security groups, invalid routing). Resolve all warnings before proceeding to condition rule configuration in Section 05. Do not test in production with open validation warnings.</div>
+        <div class="callout crit"><div class="callout-label">🔴 Critical</div><div class="callout-body">Saving a BP definition applies it immediately to all new transactions of that type. If you are mid-configuration and not ready to go live, use the <strong>sandbox tenant only</strong> until the full configuration is complete and tested.</div></div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- S5 -->
+  <div class="section" id="s5">
+    <div class="section-header"><div class="section-num">05</div><div><div class="section-title">Condition Rules &amp; Routing Logic</div><div class="section-desc">Making BPs intelligent — conditional steps, skip logic, and dynamic routing</div></div></div>
+    <p>Condition rules are the most powerful and most commonly misconfigured element of BPF. They determine whether a step is included, skipped, or routed differently based on worker or transaction attributes. Mastering condition rules is the difference between a rigid BP and an intelligent one.</p>
+
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content">
+        <div class="step-title">Navigate to Condition Rule Configuration</div>
+        <div class="step-body">Within the BP step, click <strong>Add Condition</strong>. Select <strong>Create a New Condition Rule</strong> or select an existing reusable rule. Name the rule descriptively — e.g., <em>Condition: Salary Change &gt; 10% of Band Midpoint</em>. This name will appear in the BP definition and audit logs.</div>
+      </div></div>
+
+      <div class="step"><div class="step-num">2</div><div class="step-content">
+        <div class="step-title">Define the Condition Logic</div>
+        <div class="step-body">Condition rules use Workday's condition builder. Select the <strong>Data Source</strong> (e.g., Worker, Compensation Proposal, Position), the <strong>field</strong> (e.g., Proposed Salary, Employee Type, Country), the <strong>operator</strong> (equals, greater than, contains, etc.), and the <strong>value</strong>. Chain multiple conditions with AND/OR logic as needed.</div>
+        <div class="callout tip"><div class="callout-label">✅ Tip</div><div class="callout-body">Build condition rules as standalone reusable objects — not embedded in a single BP. Reusable condition rules can be referenced across multiple BPs, reducing maintenance when business rules change. Navigate to <strong>Create Condition Rule</strong> as a standalone task.</div></div>
+      </div></div>
+
+      <div class="step"><div class="step-num">3</div><div class="step-content">
+        <div class="step-title">Assign the Condition to the Step</div>
+        <div class="step-body">Back in the BP definition, attach the condition rule to the step. Set the condition action: <strong>Skip Step if True</strong> or <strong>Include Step if True</strong>. Test your logic by tracing through the condition manually with test data before running a full end-to-end test. Document the expected outcome for each condition path.</div>
+      </div></div>
+
+      <div class="step"><div class="step-num">4</div><div class="step-content">
+        <div class="step-title">Test All Condition Paths</div>
+        <div class="step-body">For every condition rule, test both the TRUE and FALSE path in sandbox. Create test transactions that deliberately trigger each path. Confirm the BP routes correctly in all scenarios. Log each test result with the triggering data, expected path, and actual path.</div>
+        <div class="callout warn"><div class="callout-label">⚠️ Warning</div><div class="callout-body">The most common BPF failure mode is an untested condition path. A condition rule that works for 95% of transactions can silently skip a mandatory approval step for a specific worker type or country. Test edge cases — international hires, rehires, contingent workers.</div></div>
+      </div></div>
+    </div>
+
+    <div class="subsection"><div class="subsection-title">Common Condition Rule Patterns</div></div>
+    <table class="data-table">
+      <thead><tr><th>Use Case</th><th>Data Source</th><th>Condition Logic</th><th>Step Action</th></tr></thead>
+      <tbody>
+        <tr><td>Salary increase &gt; threshold requires extra approval</td><td>Compensation Proposal</td><td>Proposed Change % &gt; 15</td><td>Include extra approval step</td></tr>
+        <tr><td>Skip payroll notification for contractors</td><td>Worker</td><td>Employee Type = Contingent Worker</td><td>Skip payroll To-Do</td></tr>
+        <tr><td>Route to regional HR for non-HQ locations</td><td>Worker</td><td>Location.Region != HQ</td><td>Route to Regional HR group</td></tr>
+        <tr><td>Legal review for terminations in France/Germany</td><td>Worker</td><td>Country = FRA or DEU</td><td>Include Legal Review step</td></tr>
+        <tr><td>Skip manager approval for temp contract extensions</td><td>Position</td><td>Position Type = Fixed-Term AND Duration &lt; 90 days</td><td>Skip Manager Approval</td></tr>
+        <tr><td>Require HRIS approval for grade changes &gt; 2 levels</td><td>Compensation</td><td>Grade Change &gt; 2</td><td>Include HRIS approval step</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- S6 -->
+  <div class="section" id="s6">
+    <div class="section-header"><div class="section-num">06</div><div><div class="section-title">Notifications &amp; To-Do Steps</div><div class="section-desc">Configuring communication and manual task steps</div></div></div>
+
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content">
+        <div class="step-title">Configure Notification Steps</div>
+        <div class="step-body">Add a <strong>Notification</strong> step to the BP. Select the target: Security Group, Role, or specific users. Choose the notification template — use Workday's delivered templates or create a custom notification via <strong>Create Notification</strong>. Configure whether the notification is sent immediately when the step is reached, or on BP completion.</div>
+        <div class="callout rat"><div class="callout-label">💡 Rationale</div><div class="callout-body">Notifications are non-blocking — the BP continues regardless of whether the notification recipient acts. Use them for FYI communications (payroll, IT, facilities) where no action is required from the recipient. Use Approval steps where an action or sign-off is required.</div></div>
+      </div></div>
+
+      <div class="step"><div class="step-num">2</div><div class="step-content">
+        <div class="step-title">Configure To-Do Steps</div>
+        <div class="step-body">Add a <strong>To-Do</strong> step and assign to the relevant security group or role. Write the To-Do instruction text clearly — this is what the recipient sees in their Workday inbox. Set a due date. Configure whether the BP waits for To-Do completion (<strong>blocking</strong>) or continues regardless (<strong>non-blocking</strong>).</div>
+        <div class="callout warn"><div class="callout-label">⚠️ Warning</div><div class="callout-body">Blocking To-Do steps will stall the entire BP until marked complete. Only use blocking To-Dos where the downstream step genuinely cannot proceed without the manual task being done (e.g., physical equipment provision before first day). For most cases, non-blocking To-Dos with SLA monitoring is the right pattern.</div></div>
+      </div></div>
+
+      <div class="step"><div class="step-num">3</div><div class="step-content">
+        <div class="step-title">Configure Checklists for Parallel Tasks</div>
+        <div class="step-body">For onboarding, offboarding, and similar multi-party workflows, use a <strong>Checklist</strong> step. Add multiple To-Do items targeting different groups (IT, Facilities, Payroll, HR) that run in parallel. Set individual due dates per item. The checklist step completes when all items are marked done — or configure it to continue after a defined subset complete.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- S7 -->
+  <div class="section" id="s7">
+    <div class="section-header"><div class="section-num">07</div><div><div class="section-title">Validation &amp; Testing</div><div class="section-desc">End-to-end testing before production deployment</div></div></div>
+
+    <table class="data-table">
+      <thead><tr><th>Test Scenario</th><th>What to Verify</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td>Happy path — standard transaction</td><td>All steps appear in correct order, route to correct approver, complete without error</td><td><span class="badge crit">Critical</span></td></tr>
+        <tr><td>Condition rule — TRUE path</td><td>Conditional step included / step skipped as designed</td><td><span class="badge crit">Critical</span></td></tr>
+        <tr><td>Condition rule — FALSE path</td><td>BP flows correctly when condition is not met</td><td><span class="badge crit">Critical</span></td></tr>
+        <tr><td>Approval delegation</td><td>Delegated approvals route correctly; delegate receives notification</td><td><span class="badge high">High</span></td></tr>
+        <tr><td>SLA / escalation</td><td>Overdue steps trigger escalation notification to correct party</td><td><span class="badge high">High</span></td></tr>
+        <tr><td>Deny / return to initiator</td><td>Denied transactions return to correct step; initiator receives notification</td><td><span class="badge high">High</span></td></tr>
+        <tr><td>Sub-process trigger</td><td>Child BP initiates at correct step; completes independently</td><td><span class="badge med">Medium</span></td></tr>
+        <tr><td>International / edge case worker</td><td>Country-specific condition rules fire correctly for non-HQ locations</td><td><span class="badge high">High</span></td></tr>
+        <tr><td>Retract / rescind in-flight</td><td>Retracting a transaction mid-BP cleans up correctly; no orphaned steps</td><td><span class="badge med">Medium</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout tip"><div class="callout-label">✅ Tip</div><div class="callout-body">Use Workday's <strong>Business Process Event Monitor</strong> during testing to watch transactions move through steps in real time. This is significantly faster than navigating to each approver's inbox to manually track progress.</div></div>
+  </div>
+
+  <!-- S8 -->
+  <div class="section" id="s8">
+    <div class="section-header"><div class="section-num">08</div><div><div class="section-title">Rollback &amp; Risk Notes</div><div class="section-desc">Reversing BP changes and managing common failure modes</div></div></div>
+
+    <div class="callout crit"><div class="callout-label">🔴 Critical</div><div class="callout-body">Workday does not maintain automatic version history for BP definitions. The only rollback option is to manually re-enter the previous configuration. This is why a pre-change screenshot (Section 04, Step 1) is non-negotiable. For complex BPs, export the full definition to a document before every change.</div></div>
+
+    <div class="subsection"><div class="subsection-title">Rollback Procedure</div></div>
+    <ul>
+      <li>Navigate to the BP definition and edit to restore the previous step configuration</li>
+      <li>Rebuild removed steps, re-add security group assignments, and restore condition rules from your pre-change documentation</li>
+      <li>Save and test with the same scenarios from Section 07</li>
+      <li>For in-flight transactions on the incorrect definition: assess each individually — some may need manual retraction and re-initiation on the corrected definition</li>
+      <li>Document the rollback event in the Change Log (Section 10)</li>
+    </ul>
+
+    <div class="subsection"><div class="subsection-title">Common Risk Scenarios</div></div>
+    <table class="data-table">
+      <thead><tr><th>Risk</th><th>Severity</th><th>Mitigation</th></tr></thead>
+      <tbody>
+        <tr><td>Mandatory approval step accidentally removed</td><td><span class="badge crit">Critical</span></td><td>Second reviewer must confirm all approval steps present before saving any BP change</td></tr>
+        <tr><td>Condition rule misconfigured — approval bypassed</td><td><span class="badge crit">Critical</span></td><td>Test all condition paths in sandbox; include edge cases in test plan</td></tr>
+        <tr><td>BP changed during high-volume period</td><td><span class="badge high">High</span></td><td>Freeze BP changes during month-end, open enrolment, and annual review cycles</td></tr>
+        <tr><td>Security group removed — step has no assignee</td><td><span class="badge high">High</span></td><td>Validate all step groups still exist before saving; run post-save validation check</td></tr>
+        <tr><td>Sub-process not triggered due to condition error</td><td><span class="badge med">Medium</span></td><td>Test sub-process trigger condition explicitly; monitor via Event Monitor post-deployment</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- S9 -->
+  <div class="section" id="s9">
+    <div class="section-header"><div class="section-num">09</div><div><div class="section-title">Operator Notes</div><div class="section-desc">Organisation-specific BP design decisions</div></div></div>
+    <div class="notes-area">
+      <p style="color:var(--text-dim);font-size:13px;font-style:italic;margin-bottom:16px;">Fill in your organisation-specific details for this BP configuration.</p>
+      <div class="nrow">
+        <div><div class="nf-label">Business Process Name</div><input class="nfield" type="text" placeholder="e.g. Hire Employee"/></div>
+        <div><div class="nf-label">BP Definition Scope</div><input class="nfield" type="text" placeholder="e.g. Global / EMEA / APAC"/></div>
+      </div>
+      <div class="nrow">
+        <div><div class="nf-label">Process Owner</div><input class="nfield" type="text" placeholder="HR leader name / role"/></div>
+        <div><div class="nf-label">HRIS Config Lead</div><input class="nfield" type="text" placeholder="Admin / consultant name"/></div>
+      </div>
+      <div style="margin-bottom:16px;"><div class="nf-label">Step Inventory (list all steps, types, and assigned security groups)</div><textarea class="ntarea" placeholder="Step 1: Initiate — HR Partner (SG_RB_HRPartner)&#10;Step 2: Approval — Hiring Manager (SG_RB_Manager)&#10;Step 3: Approval — HR Director (SG_RB_HRDirector) — Condition: Salary > Band Max&#10;Step 4: Notification — Payroll (SG_UB_Payroll)&#10;Step 5: To-Do — IT Provisioning (SG_UB_IT)"></textarea></div>
+      <div style="margin-bottom:16px;"><div class="nf-label">Condition Rules Summary</div><textarea class="ntarea" placeholder="Document each condition rule name, logic, and step action..."></textarea></div>
+      <div><div class="nf-label">Design Decisions, Exceptions &amp; Rationale</div><textarea class="ntarea" placeholder="Document any non-standard routing decisions, stakeholder agreements, legal / Works Council requirements..."></textarea></div>
+    </div>
+  </div>
+
+  <!-- S10 -->
+  <div class="section" id="s10">
+    <div class="section-header"><div class="section-num">10</div><div><div class="section-title">Change Log</div><div class="section-desc">Version history for all BP configuration changes</div></div></div>
+    <table class="data-table">
+      <thead><tr><th>Version</th><th>Date</th><th>Changed By</th><th>Change Description</th><th>Ticket Ref</th><th>Approved By</th></tr></thead>
+      <tbody>
+        <tr><td>1.0</td><td>[Date]</td><td>[Name]</td><td>Initial BP configuration and go-live</td><td>[Ticket]</td><td>[Approver]</td></tr>
+        <tr><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand">KAIZEN OS</div>
+    <div class="footer-note">Workday SOP Series Vol. 03 — Business Process Framework · v1.0 · © 2026 Kaizen OS. All rights reserved.</div>
+  </div>
+
+</div>
+<script>function toggleCheck(el){el.classList.toggle('checked')}</script>
+</body>
+</html>
