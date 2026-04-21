@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Workday Business Process Framework SOP — Kaizen OS</title>
+<title>Workday Business Process Framework SOP â Kaizen OS</title>
 <style>
   :root {
     --bg:#0e0e0e;--surface:#161616;--surface2:#1e1e1e;--border:#2a2a2a;
@@ -108,14 +108,14 @@
 
   <div class="cover">
     <div class="tags">
-      <div class="series-tag"><span class="series-label">Workday SOP Series · Vol. 03</span></div>
+      <div class="series-tag"><span class="series-label">Workday SOP Series Â· Vol. 06</span></div>
       <div class="brand-tag"><div class="brand-dot"></div><span class="brand-name">Kaizen OS</span></div>
     </div>
     <div class="cover-title">Business Process<br><span>Framework (BPF)</span></div>
-    <p class="cover-sub">A practitioner SOP for designing, configuring, and maintaining Workday Business Processes — covering step types, routing logic, condition rules, notifications, and BP governance across the full HR transaction lifecycle.</p>
+    <p class="cover-sub">A practitioner SOP for designing, configuring, and maintaining Workday Business Processes â covering step types, routing logic, condition rules, notifications, and BP governance across the full HR transaction lifecycle.</p>
     <div class="meta-grid">
       <div class="meta-item"><div class="meta-label">Document Type</div><div class="meta-value">SOP Template</div></div>
-      <div class="meta-item"><div class="meta-label">Series Volume</div><div class="meta-value">03 of 06</div></div>
+      <div class="meta-item"><div class="meta-label">Series Volume</div><div class="meta-value">06 of 06</div></div>
       <div class="meta-item"><div class="meta-label">Audience</div><div class="meta-value">Workday Admins / Consultants</div></div>
       <div class="meta-item"><div class="meta-label">Scope</div><div class="meta-value">BPF Configuration</div></div>
       <div class="meta-item"><div class="meta-label">Version</div><div class="meta-value">1.0</div></div>
@@ -129,7 +129,7 @@
       <li><span class="toc-num">01</span><a href="#s1">How to Use This SOP</a></li>
       <li><span class="toc-num">02</span><a href="#s2">BPF Architecture Primer</a></li>
       <li><span class="toc-num">03</span><a href="#s3">Pre-Configuration Checklist</a></li>
-      <li><span class="toc-num">04</span><a href="#s4">Business Process Configuration — Step-by-Step</a></li>
+      <li><span class="toc-num">04</span><a href="#s4">Business Process Configuration â Step-by-Step</a></li>
       <li><span class="toc-num">05</span><a href="#s5">Condition Rules &amp; Routing Logic</a></li>
       <li><span class="toc-num">06</span><a href="#s6">Notifications &amp; To-Do Steps</a></li>
       <li><span class="toc-num">07</span><a href="#s7">Validation &amp; Testing</a></li>
@@ -142,9 +142,9 @@
   <!-- S1 -->
   <div class="section" id="s1">
     <div class="section-header"><div class="section-num">01</div><div><div class="section-title">How to Use This SOP</div><div class="section-desc">Read before editing any business process</div></div></div>
-    <p>The Business Process Framework governs every HR transaction in Workday — from Hire to Terminate, Change Job to Compensation Change. A misconfigured BP can stall transactions for hundreds of employees, route approvals incorrectly, or bypass controls entirely. This SOP provides a repeatable, auditable approach to BP configuration and change management.</p>
-    <div class="callout crit"><div class="callout-label">🔴 Critical</div><div class="callout-body">Business Process changes affect live transactions immediately upon saving — there is no "pending activation" step as with security. If you edit a BP while transactions are in-flight, those transactions continue on the <strong>old</strong> definition. New transactions use the <strong>new</strong> definition. Always coordinate BP changes with your HR Ops team to avoid mid-process confusion.</div></div>
-    <div class="callout tip"><div class="callout-label">✅ Tip</div><div class="callout-body">Duplicate this document per business process. Name files using your convention (e.g., <em>SOP_BP_Hire_Employee_v1.0_2026.html</em>). For complex BPs with many variants, create one file per sub-process definition.</div></div>
+    <p>The Business Process Framework governs every HR transaction in Workday â from Hire to Terminate, Change Job to Compensation Change. A misconfigured BP can stall transactions for hundreds of employees, route approvals incorrectly, or bypass controls entirely. This SOP provides a repeatable, auditable approach to BP configuration and change management.</p>
+    <div class="callout crit"><div class="callout-label">ð´ Critical</div><div class="callout-body">Business Process changes affect live transactions immediately upon saving â there is no "pending activation" step as with security. If you edit a BP while transactions are in-flight, those transactions continue on the <strong>old</strong> definition. New transactions use the <strong>new</strong> definition. Always coordinate BP changes with your HR Ops team to avoid mid-process confusion.</div></div>
+    <div class="callout tip"><div class="callout-label">â Tip</div><div class="callout-body">Duplicate this document per business process. Name files using your convention (e.g., <em>SOP_BP_Hire_Employee_v1.0_2026.html</em>). For complex BPs with many variants, create one file per sub-process definition.</div></div>
   </div>
 
   <!-- S2 -->
@@ -154,10 +154,10 @@
 
     <div class="subsection"><div class="subsection-title">Standard BP Lifecycle</div></div>
     <div class="flow">
-      <div class="flow-node accent">Initiate</div><div class="flow-arrow">→</div>
-      <div class="flow-node">Action Step</div><div class="flow-arrow">→</div>
-      <div class="flow-node">Approval Step</div><div class="flow-arrow">→</div>
-      <div class="flow-node">To-Do / Notify</div><div class="flow-arrow">→</div>
+      <div class="flow-node accent">Initiate</div><div class="flow-arrow">â</div>
+      <div class="flow-node">Action Step</div><div class="flow-arrow">â</div>
+      <div class="flow-node">Approval Step</div><div class="flow-arrow">â</div>
+      <div class="flow-node">To-Do / Notify</div><div class="flow-arrow">â</div>
       <div class="flow-node accent">Complete</div>
     </div>
 
@@ -168,19 +168,19 @@
         <tr><td><strong>Action</strong></td><td>Data entry or decision by a user</td><td>Specific security group</td><td>Hire initiation, Job Change entry</td></tr>
         <tr><td><strong>Approval</strong></td><td>Approve or deny the transaction</td><td>Manager, HR leader, chain of command</td><td>Manager approval on salary changes</td></tr>
         <tr><td><strong>Approval Chain</strong></td><td>Sequential approvals up org hierarchy</td><td>Reporting chain</td><td>Escalating approvals for senior hires</td></tr>
-        <tr><td><strong>To-Do</strong></td><td>Manual task reminder — no system action</td><td>Security group or role</td><td>Remind IT to provision access</td></tr>
-        <tr><td><strong>Notification</strong></td><td>Inform a group — no action required</td><td>Any group or individual</td><td>Notify payroll of a new hire</td></tr>
+        <tr><td><strong>To-Do</strong></td><td>Manual task reminder â no system action</td><td>Security group or role</td><td>Remind IT to provision access</td></tr>
+        <tr><td><strong>Notification</strong></td><td>Inform a group â no action required</td><td>Any group or individual</td><td>Notify payroll of a new hire</td></tr>
         <tr><td><strong>Checklist</strong></td><td>Group of To-Do items that can run in parallel</td><td>Multiple groups</td><td>Onboarding task distribution</td></tr>
         <tr><td><strong>Sub-Process</strong></td><td>Triggers a separate child BP</td><td>Defined in child BP</td><td>Benefits enrolment triggered by Hire</td></tr>
-        <tr><td><strong>Review</strong></td><td>View-only review step — no approval action</td><td>Defined security group</td><td>Legal review of termination</td></tr>
+        <tr><td><strong>Review</strong></td><td>View-only review step â no approval action</td><td>Defined security group</td><td>Legal review of termination</td></tr>
       </tbody>
     </table>
 
     <div class="grid2">
       <div class="card"><div class="card-title">Condition Rules</div><p style="font-size:13px;color:var(--text-muted);margin:0">Logic that controls whether a step is included, skipped, or routed differently based on worker or transaction data. The primary tool for building intelligent, conditional BPs.</p></div>
-      <div class="card"><div class="card-title">BP Definitions vs. Templates</div><p style="font-size:13px;color:var(--text-muted);margin:0">A BP <strong>Definition</strong> is a specific configuration attached to a BP type. A BP <strong>Template</strong> is a reusable structure. Most orgs configure Definitions directly — Templates are used for standardised multi-tenant deployments.</p></div>
+      <div class="card"><div class="card-title">BP Definitions vs. Templates</div><p style="font-size:13px;color:var(--text-muted);margin:0">A BP <strong>Definition</strong> is a specific configuration attached to a BP type. A BP <strong>Template</strong> is a reusable structure. Most orgs configure Definitions directly â Templates are used for standardised multi-tenant deployments.</p></div>
       <div class="card"><div class="card-title">Effective Dating</div><p style="font-size:13px;color:var(--text-muted);margin:0">BP changes are not effective-dated. A saved change applies to all new transactions immediately. Plan changes carefully around high-volume periods (month-end, open enrolment).</p></div>
-      <div class="card"><div class="card-title">BP Inheritance</div><p style="font-size:13px;color:var(--text-muted);margin:0">Child orgs can inherit BP definitions from parent orgs or override with their own. Understand your org's inheritance model before making changes — an edit at the wrong level can unexpectedly affect multiple entities.</p></div>
+      <div class="card"><div class="card-title">BP Inheritance</div><p style="font-size:13px;color:var(--text-muted);margin:0">Child orgs can inherit BP definitions from parent orgs or override with their own. Understand your org's inheritance model before making changes â an edit at the wrong level can unexpectedly affect multiple entities.</p></div>
     </div>
   </div>
 
@@ -190,12 +190,12 @@
 
     <div class="subsection"><div class="subsection-title">Design Readiness</div></div>
     <ul class="checklist">
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">BP process map documented — current state and desired future state<small>Include every step, the approver group, and the condition rule logic for each routing decision</small></span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">BP process map documented â current state and desired future state<small>Include every step, the approver group, and the condition rule logic for each routing decision</small></span></li>
       <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">All condition rules and routing logic mapped and approved by HR process owner</span></li>
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Security groups confirmed — all approver and action step groups exist and are correctly configured (see Vol. 02)</span></li>
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Notifications list agreed — who gets notified at what step and via what channel</span></li>
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">SLAs defined — expected time-to-complete for each step and overall BP<small>Required for To-Do and Approval escalation configuration</small></span></li>
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">In-flight transactions reviewed — confirm timing of change will not disrupt active transactions</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Security groups confirmed â all approver and action step groups exist and are correctly configured (see Vol. 03)</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Notifications list agreed â who gets notified at what step and via what channel</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">SLAs defined â expected time-to-complete for each step and overall BP<small>Required for To-Do and Approval escalation configuration</small></span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">In-flight transactions reviewed â confirm timing of change will not disrupt active transactions</span></li>
     </ul>
 
     <div class="subsection"><div class="subsection-title">Stakeholder Sign-offs</div></div>
@@ -209,25 +209,25 @@
 
   <!-- S4 -->
   <div class="section" id="s4">
-    <div class="section-header"><div class="section-num">04</div><div><div class="section-title">Business Process Configuration — Step-by-Step</div><div class="section-desc">Editing and building BP definitions in Workday</div></div></div>
+    <div class="section-header"><div class="section-num">04</div><div><div class="section-title">Business Process Configuration â Step-by-Step</div><div class="section-desc">Editing and building BP definitions in Workday</div></div></div>
 
     <div class="steps">
       <div class="step"><div class="step-num">1</div><div class="step-content">
         <div class="step-title">Locate the Business Process Definition</div>
-        <div class="step-body">Search for the BP by name (e.g., <em>Hire Employee</em>, <em>Change Job</em>). Navigate to <strong>Business Process</strong> task and select <strong>Edit Definition</strong>. Alternatively, use <strong>View Business Process Definitions</strong> to browse all BPs. Confirm you are editing the correct definition — many BPs have multiple definitions per org or country.</div>
-        <div class="callout tip"><div class="callout-label">✅ Tip</div><div class="callout-body">Before editing, run <strong>View Business Process Definition</strong> and screenshot the current state. This is your rollback reference — Workday does not version BP definitions automatically.</div></div>
+        <div class="step-body">Search for the BP by name (e.g., <em>Hire Employee</em>, <em>Change Job</em>). Navigate to <strong>Business Process</strong> task and select <strong>Edit Definition</strong>. Alternatively, use <strong>View Business Process Definitions</strong> to browse all BPs. Confirm you are editing the correct definition â many BPs have multiple definitions per org or country.</div>
+        <div class="callout tip"><div class="callout-label">â Tip</div><div class="callout-body">Before editing, run <strong>View Business Process Definition</strong> and screenshot the current state. This is your rollback reference â Workday does not version BP definitions automatically.</div></div>
       </div></div>
 
       <div class="step"><div class="step-num">2</div><div class="step-content">
         <div class="step-title">Add or Edit a Step</div>
         <div class="step-body">In the BP definition canvas, click <strong>Add Step</strong> (or click an existing step to edit). Select the step type from the dropdown (see Section 02 reference table). Configure: Step name, security group assignment (who acts on this step), order/sequence, and whether the step is required or optional.</div>
-        <div class="callout note"><div class="callout-label">📋 Note</div><div class="callout-body">Step order matters but is not always sequential — Workday supports parallel steps (steps that run simultaneously). Mark steps as parallel where the business process design permits concurrent action, such as simultaneous IT provisioning and payroll notification.</div></div>
+        <div class="callout note"><div class="callout-label">ð Note</div><div class="callout-body">Step order matters but is not always sequential â Workday supports parallel steps (steps that run simultaneously). Mark steps as parallel where the business process design permits concurrent action, such as simultaneous IT provisioning and payroll notification.</div></div>
       </div></div>
 
       <div class="step"><div class="step-num">3</div><div class="step-content">
         <div class="step-title">Configure Approval Step Routing</div>
         <div class="step-body">For Approval steps, configure the routing target: <strong>Specific Security Group</strong> (e.g., HR Director group), <strong>Manager</strong> (direct or skip-level), or <strong>Approval Chain</strong> (sequential up the org hierarchy). Set the <strong>order</strong> (single approver vs. all must approve) and <strong>delegation rules</strong>.</div>
-        <div class="callout warn"><div class="callout-label">⚠️ Warning</div><div class="callout-body">Approval Chain routing can create extremely long approval sequences for deep org hierarchies. Always set a <strong>maximum levels</strong> cap and test with your deepest org structure in sandbox before enabling in production.</div></div>
+        <div class="callout warn"><div class="callout-label">â ï¸ Warning</div><div class="callout-body">Approval Chain routing can create extremely long approval sequences for deep org hierarchies. Always set a <strong>maximum levels</strong> cap and test with your deepest org structure in sandbox before enabling in production.</div></div>
       </div></div>
 
       <div class="step"><div class="step-num">4</div><div class="step-content">
@@ -238,26 +238,26 @@
       <div class="step"><div class="step-num">5</div><div class="step-content">
         <div class="step-title">Save &amp; Validate Structure</div>
         <div class="step-body">Save the definition. Workday will surface validation warnings for common configuration errors (orphaned steps, missing security groups, invalid routing). Resolve all warnings before proceeding to condition rule configuration in Section 05. Do not test in production with open validation warnings.</div>
-        <div class="callout crit"><div class="callout-label">🔴 Critical</div><div class="callout-body">Saving a BP definition applies it immediately to all new transactions of that type. If you are mid-configuration and not ready to go live, use the <strong>sandbox tenant only</strong> until the full configuration is complete and tested.</div></div>
+        <div class="callout crit"><div class="callout-label">ð´ Critical</div><div class="callout-body">Saving a BP definition applies it immediately to all new transactions of that type. If you are mid-configuration and not ready to go live, use the <strong>sandbox tenant only</strong> until the full configuration is complete and tested.</div></div>
       </div></div>
     </div>
   </div>
 
   <!-- S5 -->
   <div class="section" id="s5">
-    <div class="section-header"><div class="section-num">05</div><div><div class="section-title">Condition Rules &amp; Routing Logic</div><div class="section-desc">Making BPs intelligent — conditional steps, skip logic, and dynamic routing</div></div></div>
+    <div class="section-header"><div class="section-num">05</div><div><div class="section-title">Condition Rules &amp; Routing Logic</div><div class="section-desc">Making BPs intelligent â conditional steps, skip logic, and dynamic routing</div></div></div>
     <p>Condition rules are the most powerful and most commonly misconfigured element of BPF. They determine whether a step is included, skipped, or routed differently based on worker or transaction attributes. Mastering condition rules is the difference between a rigid BP and an intelligent one.</p>
 
     <div class="steps">
       <div class="step"><div class="step-num">1</div><div class="step-content">
         <div class="step-title">Navigate to Condition Rule Configuration</div>
-        <div class="step-body">Within the BP step, click <strong>Add Condition</strong>. Select <strong>Create a New Condition Rule</strong> or select an existing reusable rule. Name the rule descriptively — e.g., <em>Condition: Salary Change &gt; 10% of Band Midpoint</em>. This name will appear in the BP definition and audit logs.</div>
+        <div class="step-body">Within the BP step, click <strong>Add Condition</strong>. Select <strong>Create a New Condition Rule</strong> or select an existing reusable rule. Name the rule descriptively â e.g., <em>Condition: Salary Change &gt; 10% of Band Midpoint</em>. This name will appear in the BP definition and audit logs.</div>
       </div></div>
 
       <div class="step"><div class="step-num">2</div><div class="step-content">
         <div class="step-title">Define the Condition Logic</div>
         <div class="step-body">Condition rules use Workday's condition builder. Select the <strong>Data Source</strong> (e.g., Worker, Compensation Proposal, Position), the <strong>field</strong> (e.g., Proposed Salary, Employee Type, Country), the <strong>operator</strong> (equals, greater than, contains, etc.), and the <strong>value</strong>. Chain multiple conditions with AND/OR logic as needed.</div>
-        <div class="callout tip"><div class="callout-label">✅ Tip</div><div class="callout-body">Build condition rules as standalone reusable objects — not embedded in a single BP. Reusable condition rules can be referenced across multiple BPs, reducing maintenance when business rules change. Navigate to <strong>Create Condition Rule</strong> as a standalone task.</div></div>
+        <div class="callout tip"><div class="callout-label">â Tip</div><div class="callout-body">Build condition rules as standalone reusable objects â not embedded in a single BP. Reusable condition rules can be referenced across multiple BPs, reducing maintenance when business rules change. Navigate to <strong>Create Condition Rule</strong> as a standalone task.</div></div>
       </div></div>
 
       <div class="step"><div class="step-num">3</div><div class="step-content">
@@ -268,7 +268,7 @@
       <div class="step"><div class="step-num">4</div><div class="step-content">
         <div class="step-title">Test All Condition Paths</div>
         <div class="step-body">For every condition rule, test both the TRUE and FALSE path in sandbox. Create test transactions that deliberately trigger each path. Confirm the BP routes correctly in all scenarios. Log each test result with the triggering data, expected path, and actual path.</div>
-        <div class="callout warn"><div class="callout-label">⚠️ Warning</div><div class="callout-body">The most common BPF failure mode is an untested condition path. A condition rule that works for 95% of transactions can silently skip a mandatory approval step for a specific worker type or country. Test edge cases — international hires, rehires, contingent workers.</div></div>
+        <div class="callout warn"><div class="callout-label">â ï¸ Warning</div><div class="callout-body">The most common BPF failure mode is an untested condition path. A condition rule that works for 95% of transactions can silently skip a mandatory approval step for a specific worker type or country. Test edge cases â international hires, rehires, contingent workers.</div></div>
       </div></div>
     </div>
 
@@ -293,19 +293,19 @@
     <div class="steps">
       <div class="step"><div class="step-num">1</div><div class="step-content">
         <div class="step-title">Configure Notification Steps</div>
-        <div class="step-body">Add a <strong>Notification</strong> step to the BP. Select the target: Security Group, Role, or specific users. Choose the notification template — use Workday's delivered templates or create a custom notification via <strong>Create Notification</strong>. Configure whether the notification is sent immediately when the step is reached, or on BP completion.</div>
-        <div class="callout rat"><div class="callout-label">💡 Rationale</div><div class="callout-body">Notifications are non-blocking — the BP continues regardless of whether the notification recipient acts. Use them for FYI communications (payroll, IT, facilities) where no action is required from the recipient. Use Approval steps where an action or sign-off is required.</div></div>
+        <div class="step-body">Add a <strong>Notification</strong> step to the BP. Select the target: Security Group, Role, or specific users. Choose the notification template â use Workday's delivered templates or create a custom notification via <strong>Create Notification</strong>. Configure whether the notification is sent immediately when the step is reached, or on BP completion.</div>
+        <div class="callout rat"><div class="callout-label">ð¡ Rationale</div><div class="callout-body">Notifications are non-blocking â the BP continues regardless of whether the notification recipient acts. Use them for FYI communications (payroll, IT, facilities) where no action is required from the recipient. Use Approval steps where an action or sign-off is required.</div></div>
       </div></div>
 
       <div class="step"><div class="step-num">2</div><div class="step-content">
         <div class="step-title">Configure To-Do Steps</div>
-        <div class="step-body">Add a <strong>To-Do</strong> step and assign to the relevant security group or role. Write the To-Do instruction text clearly — this is what the recipient sees in their Workday inbox. Set a due date. Configure whether the BP waits for To-Do completion (<strong>blocking</strong>) or continues regardless (<strong>non-blocking</strong>).</div>
-        <div class="callout warn"><div class="callout-label">⚠️ Warning</div><div class="callout-body">Blocking To-Do steps will stall the entire BP until marked complete. Only use blocking To-Dos where the downstream step genuinely cannot proceed without the manual task being done (e.g., physical equipment provision before first day). For most cases, non-blocking To-Dos with SLA monitoring is the right pattern.</div></div>
+        <div class="step-body">Add a <strong>To-Do</strong> step and assign to the relevant security group or role. Write the To-Do instruction text clearly â this is what the recipient sees in their Workday inbox. Set a due date. Configure whether the BP waits for To-Do completion (<strong>blocking</strong>) or continues regardless (<strong>non-blocking</strong>).</div>
+        <div class="callout warn"><div class="callout-label">â ï¸ Warning</div><div class="callout-body">Blocking To-Do steps will stall the entire BP until marked complete. Only use blocking To-Dos where the downstream step genuinely cannot proceed without the manual task being done (e.g., physical equipment provision before first day). For most cases, non-blocking To-Dos with SLA monitoring is the right pattern.</div></div>
       </div></div>
 
       <div class="step"><div class="step-num">3</div><div class="step-content">
         <div class="step-title">Configure Checklists for Parallel Tasks</div>
-        <div class="step-body">For onboarding, offboarding, and similar multi-party workflows, use a <strong>Checklist</strong> step. Add multiple To-Do items targeting different groups (IT, Facilities, Payroll, HR) that run in parallel. Set individual due dates per item. The checklist step completes when all items are marked done — or configure it to continue after a defined subset complete.</div>
+        <div class="step-body">For onboarding, offboarding, and similar multi-party workflows, use a <strong>Checklist</strong> step. Add multiple To-Do items targeting different groups (IT, Facilities, Payroll, HR) that run in parallel. Set individual due dates per item. The checklist step completes when all items are marked done â or configure it to continue after a defined subset complete.</div>
       </div></div>
     </div>
   </div>
@@ -317,9 +317,9 @@
     <table class="data-table">
       <thead><tr><th>Test Scenario</th><th>What to Verify</th><th>Priority</th></tr></thead>
       <tbody>
-        <tr><td>Happy path — standard transaction</td><td>All steps appear in correct order, route to correct approver, complete without error</td><td><span class="badge crit">Critical</span></td></tr>
-        <tr><td>Condition rule — TRUE path</td><td>Conditional step included / step skipped as designed</td><td><span class="badge crit">Critical</span></td></tr>
-        <tr><td>Condition rule — FALSE path</td><td>BP flows correctly when condition is not met</td><td><span class="badge crit">Critical</span></td></tr>
+        <tr><td>Happy path â standard transaction</td><td>All steps appear in correct order, route to correct approver, complete without error</td><td><span class="badge crit">Critical</span></td></tr>
+        <tr><td>Condition rule â TRUE path</td><td>Conditional step included / step skipped as designed</td><td><span class="badge crit">Critical</span></td></tr>
+        <tr><td>Condition rule â FALSE path</td><td>BP flows correctly when condition is not met</td><td><span class="badge crit">Critical</span></td></tr>
         <tr><td>Approval delegation</td><td>Delegated approvals route correctly; delegate receives notification</td><td><span class="badge high">High</span></td></tr>
         <tr><td>SLA / escalation</td><td>Overdue steps trigger escalation notification to correct party</td><td><span class="badge high">High</span></td></tr>
         <tr><td>Deny / return to initiator</td><td>Denied transactions return to correct step; initiator receives notification</td><td><span class="badge high">High</span></td></tr>
@@ -329,21 +329,21 @@
       </tbody>
     </table>
 
-    <div class="callout tip"><div class="callout-label">✅ Tip</div><div class="callout-body">Use Workday's <strong>Business Process Event Monitor</strong> during testing to watch transactions move through steps in real time. This is significantly faster than navigating to each approver's inbox to manually track progress.</div></div>
+    <div class="callout tip"><div class="callout-label">â Tip</div><div class="callout-body">Use Workday's <strong>Business Process Event Monitor</strong> during testing to watch transactions move through steps in real time. This is significantly faster than navigating to each approver's inbox to manually track progress.</div></div>
   </div>
 
   <!-- S8 -->
   <div class="section" id="s8">
     <div class="section-header"><div class="section-num">08</div><div><div class="section-title">Rollback &amp; Risk Notes</div><div class="section-desc">Reversing BP changes and managing common failure modes</div></div></div>
 
-    <div class="callout crit"><div class="callout-label">🔴 Critical</div><div class="callout-body">Workday does not maintain automatic version history for BP definitions. The only rollback option is to manually re-enter the previous configuration. This is why a pre-change screenshot (Section 04, Step 1) is non-negotiable. For complex BPs, export the full definition to a document before every change.</div></div>
+    <div class="callout crit"><div class="callout-label">ð´ Critical</div><div class="callout-body">Workday does not maintain automatic version history for BP definitions. The only rollback option is to manually re-enter the previous configuration. This is why a pre-change screenshot (Section 04, Step 1) is non-negotiable. For complex BPs, export the full definition to a document before every change.</div></div>
 
     <div class="subsection"><div class="subsection-title">Rollback Procedure</div></div>
     <ul>
       <li>Navigate to the BP definition and edit to restore the previous step configuration</li>
       <li>Rebuild removed steps, re-add security group assignments, and restore condition rules from your pre-change documentation</li>
       <li>Save and test with the same scenarios from Section 07</li>
-      <li>For in-flight transactions on the incorrect definition: assess each individually — some may need manual retraction and re-initiation on the corrected definition</li>
+      <li>For in-flight transactions on the incorrect definition: assess each individually â some may need manual retraction and re-initiation on the corrected definition</li>
       <li>Document the rollback event in the Change Log (Section 10)</li>
     </ul>
 
@@ -352,9 +352,9 @@
       <thead><tr><th>Risk</th><th>Severity</th><th>Mitigation</th></tr></thead>
       <tbody>
         <tr><td>Mandatory approval step accidentally removed</td><td><span class="badge crit">Critical</span></td><td>Second reviewer must confirm all approval steps present before saving any BP change</td></tr>
-        <tr><td>Condition rule misconfigured — approval bypassed</td><td><span class="badge crit">Critical</span></td><td>Test all condition paths in sandbox; include edge cases in test plan</td></tr>
+        <tr><td>Condition rule misconfigured â approval bypassed</td><td><span class="badge crit">Critical</span></td><td>Test all condition paths in sandbox; include edge cases in test plan</td></tr>
         <tr><td>BP changed during high-volume period</td><td><span class="badge high">High</span></td><td>Freeze BP changes during month-end, open enrolment, and annual review cycles</td></tr>
-        <tr><td>Security group removed — step has no assignee</td><td><span class="badge high">High</span></td><td>Validate all step groups still exist before saving; run post-save validation check</td></tr>
+        <tr><td>Security group removed â step has no assignee</td><td><span class="badge high">High</span></td><td>Validate all step groups still exist before saving; run post-save validation check</td></tr>
         <tr><td>Sub-process not triggered due to condition error</td><td><span class="badge med">Medium</span></td><td>Test sub-process trigger condition explicitly; monitor via Event Monitor post-deployment</td></tr>
       </tbody>
     </table>
@@ -373,7 +373,7 @@
         <div><div class="nf-label">Process Owner</div><input class="nfield" type="text" placeholder="HR leader name / role"/></div>
         <div><div class="nf-label">HRIS Config Lead</div><input class="nfield" type="text" placeholder="Admin / consultant name"/></div>
       </div>
-      <div style="margin-bottom:16px;"><div class="nf-label">Step Inventory (list all steps, types, and assigned security groups)</div><textarea class="ntarea" placeholder="Step 1: Initiate — HR Partner (SG_RB_HRPartner)&#10;Step 2: Approval — Hiring Manager (SG_RB_Manager)&#10;Step 3: Approval — HR Director (SG_RB_HRDirector) — Condition: Salary > Band Max&#10;Step 4: Notification — Payroll (SG_UB_Payroll)&#10;Step 5: To-Do — IT Provisioning (SG_UB_IT)"></textarea></div>
+      <div style="margin-bottom:16px;"><div class="nf-label">Step Inventory (list all steps, types, and assigned security groups)</div><textarea class="ntarea" placeholder="Step 1: Initiate â HR Partner (SG_RB_HRPartner)&#10;Step 2: Approval â Hiring Manager (SG_RB_Manager)&#10;Step 3: Approval â HR Director (SG_RB_HRDirector) â Condition: Salary > Band Max&#10;Step 4: Notification â Payroll (SG_UB_Payroll)&#10;Step 5: To-Do â IT Provisioning (SG_UB_IT)"></textarea></div>
       <div style="margin-bottom:16px;"><div class="nf-label">Condition Rules Summary</div><textarea class="ntarea" placeholder="Document each condition rule name, logic, and step action..."></textarea></div>
       <div><div class="nf-label">Design Decisions, Exceptions &amp; Rationale</div><textarea class="ntarea" placeholder="Document any non-standard routing decisions, stakeholder agreements, legal / Works Council requirements..."></textarea></div>
     </div>
@@ -386,16 +386,16 @@
       <thead><tr><th>Version</th><th>Date</th><th>Changed By</th><th>Change Description</th><th>Ticket Ref</th><th>Approved By</th></tr></thead>
       <tbody>
         <tr><td>1.0</td><td>[Date]</td><td>[Name]</td><td>Initial BP configuration and go-live</td><td>[Ticket]</td><td>[Approver]</td></tr>
-        <tr><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>â</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>â</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>â</td><td></td><td></td><td></td><td></td><td></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="footer">
     <div class="footer-brand">KAIZEN OS</div>
-    <div class="footer-note">Workday SOP Series Vol. 03 — Business Process Framework · v1.0 · © 2026 Kaizen OS. All rights reserved.</div>
+    <div class="footer-note">Workday SOP Series Vol. 06 â Business Process Framework Â· v1.0 Â· Â© 2026 Kaizen OS. All rights reserved.</div>
   </div>
 
 </div>
